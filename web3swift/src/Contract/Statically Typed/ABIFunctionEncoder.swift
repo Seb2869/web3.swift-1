@@ -77,7 +77,7 @@ public class ABIFunctionEncoder {
     
     public func encoded() throws -> Data {
         let methodId = try Self.methodId(name: name, types: types)
-        let allBytes = methodId + (try encodedValues.encoded(isDynamic: false))
+        let allBytes = methodId + (try encodedValues.encoded(isDynamic: true))
         return Data(allBytes)
     }
     
